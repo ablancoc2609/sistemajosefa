@@ -42,7 +42,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">¡Bienvenido!</h1>
                                     </div>
-                                    <form class="user" method="post">
+                                    <form class="user" method="POST">
                                         {% csrf_token %}
                                         {{ form.non_field_errors }}
                                         <div class="form-group">
@@ -64,10 +64,10 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">¿Olvido su contraseña?</a>
+                                        <a class="small" href="{% url 'signUp' %}">¿Olvido su contraseña?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="{% url signUp %}">Crear Cuenta</a>
+                                        <a class="small" href="{% url 'signUp' %}">Crear Cuenta</a>
                                     </div>
                                 </div>
                             </div>

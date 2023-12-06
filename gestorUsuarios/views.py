@@ -10,6 +10,8 @@ def personasIndex(request):
 
     if request.user.is_superuser:
         return render(request, 'moduloUser/dashboard_admin.html')
+    elif request.user.is_staff:
+        return render(request, 'moduloUser/dashboard_user.html')
     else:
         return render(request, 'moduloUser/dashboard_user.html')
     
@@ -17,7 +19,7 @@ def personasIndex(request):
 def signUp(request):
     usuario = Usuario
     form = SignUpForm
-    if request.method == "POST":
+    if request.method == "post":
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
